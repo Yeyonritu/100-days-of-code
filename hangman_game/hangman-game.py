@@ -8,7 +8,6 @@ chosen_word = word_list[random.randint(0, len(word_list) - 1)]
 end_of_game = False
 lives = 6
 print(art.logo)
-print(f'Pssst, the solution is {chosen_word}.')
 
 #Create blanks
 display = []
