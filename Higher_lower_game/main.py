@@ -1,6 +1,7 @@
 import game_data
 import game_art
 import random
+import os
 
 data = game_data.data
 logo = game_art.logo
@@ -8,6 +9,8 @@ logo = game_art.logo
 def select_candidate():
     random_data = data[random.randint(0, len(data) - 1)]
     return random_data
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 def display_candidate(person, comparism_label):
     name = person["name"]
@@ -57,6 +60,7 @@ while is_running:
     compare_candidate(celebrity1, celebrity2, more_popular )
     
     if compare_candidate(celebrity1, celebrity2, more_popular) == True:
+        cls()
         final_score +=1
         celebrity1 = celebrity2
         print(f"You're right! Final score: {final_score}")
