@@ -15,14 +15,20 @@ class Snake:
         self.head = self.segments[0]
         
     def create_snake(self):
-        for index in range(0, SNAKE_AMOUNT):
-            new_snake = Turtle(shape = "square")
-            new_snake.color("white")
-            new_snake.penup()
-            new_snake.goto(x = ASSEMBLY_POSITIONS[index], y = 0)
-            self.segments.append(new_snake)
+        for position in ASSEMBLY_POSITIONS:
+            self.add_segment((position, 0))
+   
+    def add_segment(self, position):
         
-            
+        new_snake = Turtle(shape = "square")
+        new_snake.color("white")
+        new_snake.penup()
+        new_snake.goto(position)
+        self.segments.append(new_snake)
+        
+    def extend(self):
+         self.add_segment(self.segments[-1].position())
+    
     def move(self):
         """Method that lets the snake to move by exchanging the first snake with the last one"""
         for seg in range(len(self.segments) - 1, 0, -1,):
