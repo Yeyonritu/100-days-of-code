@@ -4,9 +4,9 @@ COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
-class CarManager(Turtle):
+class CarManager():
     def __init__ (self):
-        super().__init__()
+        #super().__init__()
         self.allcars = []
         self.shape("square")
         self.color(random.choice(COLORS))
@@ -20,7 +20,6 @@ class CarManager(Turtle):
         
         
     def move_forward(self):
-        
         self.forward(self.initial_speed)
         
     def increase_speed(self):

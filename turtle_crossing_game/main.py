@@ -18,15 +18,22 @@ screen.onkey(player.road_cross, "Up")
 
 game_is_on = True
 while game_is_on:
-
+    time.sleep(0.1)
+    screen.update()
+   
     if random.randint(1, 6) == 1:
         new_car = CarManager()
         cars.append(new_car)
 
     for car in cars:
-        car.move_forward()
+        if player.ycor() < 280:
+            car.move_forward()
+            
+        else:
+            car.increase_speed()
         #Detect collision with car
-        if player.distance(car) < 30:
+    for car in cars:
+        if car.distance(player) < 20:
             game_is_on = False
             scoreboard.game_over()
             
@@ -35,12 +42,10 @@ while game_is_on:
         player.reset_position()
         #Detect finish line collision
         scoreboard.level_increase()
-        for car in cars:
-            car.increase_speed()
             
 
-    time.sleep(0.1)
-    screen.update()
+    # time.sleep(0.1)
+    # screen.update()
     
 screen.exitonclick()
 
