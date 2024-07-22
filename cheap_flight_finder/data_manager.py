@@ -18,5 +18,5 @@ class DataManager:
             
         update_url = f"{UPDATE_ENDPOINT}/{price['id']}"
             
-        self.sheet_response = requests.post(url=update_url, json=sheet_inputs)
+        self.sheet_response = requests.put(url=update_url, json=sheet_inputs)
         print(self.sheet_response.text)
