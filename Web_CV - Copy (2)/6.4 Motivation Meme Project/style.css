@@ -1,29 +1,26 @@
-html{
+html {
     background-color: black;
 }
 
-#memeImage{
-    border: 5px solid white;
+#quoteTitle {
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+#quote {
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+
+img {
     width: 50%;
     margin-left: 25%;
+    border: 5px solid white;
 }
 
-#maintext{
-    font-family: "Libre Baskerville", serif;
-    font-weight: 400;
-    font-style: italic;
-    color:white;
-    margin-left: 35%;
-    width: 50%;
-    text-transform: uppercase;
-}
-
-#sectext{
-    font-family: "Libre Baskerville", serif;
-    font-weight: 400;
-    font-style: italic;
-    color:white;
-    margin-left: 30%;
-    width: 50%;
-    text-transform: uppercase;
-}
